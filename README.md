@@ -29,26 +29,31 @@ Un servidor web moderno y completo desarrollado con Node.js y Express, que inclu
 ## 🛠️ Instalación
 
 1. **Clonar o descargar el proyecto**
+
    ```bash
    cd SERVIDOR_WEB
    ```
 
 2. **Instalar dependencias**
+
    ```bash
    npm install
    ```
 
 3. **Configurar variables de entorno**
+
    ```bash
    cp .env.example .env
    ```
+
    Edita el archivo `.env` con tus configuraciones.
 
 4. **Iniciar el servidor**
+
    ```bash
    # Desarrollo
    npm run dev
-   
+
    # Producción
    npm start
    ```
@@ -75,22 +80,26 @@ npm start
 ## 🌐 Endpoints Principales
 
 ### Autenticación
+
 - `POST /auth/login` - Iniciar sesión
 - `POST /auth/register` - Registrar usuario
 - `GET /auth/me` - Información del usuario actual
 
 ### Usuarios
+
 - `GET /api/users` - Listar usuarios
 - `GET /api/users/:id` - Obtener usuario por ID
 - `POST /api/users` - Crear usuario (requiere auth)
 
 ### Productos
+
 - `GET /api/products` - Listar productos
 - `POST /api/products` - Crear producto (requiere auth)
 - `PUT /api/products/:id` - Actualizar producto (requiere auth)
 - `DELETE /api/products/:id` - Eliminar producto (requiere auth)
 
 ### Archivos
+
 - `POST /files/upload` - Subir archivo (requiere auth)
 - `POST /files/upload/multiple` - Subir múltiples archivos
 - `GET /files` - Listar archivos
@@ -100,10 +109,12 @@ npm start
 ## 🔐 Autenticación
 
 ### Credenciales de prueba:
+
 - **Admin**: email: `admin@example.com`, password: `password`
 - **Usuario**: email: `user@example.com`, password: `password`
 
 ### Uso del token:
+
 ```bash
 # Hacer login
 curl -X POST http://localhost:3000/auth/login \
@@ -118,6 +129,7 @@ curl -X GET http://localhost:3000/api/users \
 ## 📚 Documentación API
 
 Una vez que el servidor esté ejecutándose, visita:
+
 - **Documentación Swagger**: `http://localhost:3000/api-docs`
 - **Página principal**: `http://localhost:3000`
 
@@ -186,6 +198,7 @@ LOG_FILE=./logs/app.log
 ## 📊 Logging
 
 Los logs se guardan en el directorio `logs/`:
+
 - `error.log` - Solo errores
 - `combined.log` - Todos los logs
 
@@ -194,27 +207,32 @@ Niveles de log disponibles: error, warn, info, http, verbose, debug, silly
 ## 🚀 Casos de Uso Recomendados
 
 ### 1. **API para Aplicación Web/Móvil**
+
 - Autenticación de usuarios
 - CRUD de datos
 - Subida de imágenes de perfil
 - Sistema de productos/catálogo
 
 ### 2. **Sistema de Gestión de Documentos**
+
 - Subida de archivos
 - Control de acceso por usuario
 - Descarga segura de documentos
 
 ### 3. **Backend para E-commerce**
+
 - Gestión de productos
 - Autenticación de compradores/vendedores
 - Manejo de imágenes de productos
 
 ### 4. **API para Dashboard/Panel Administrativo**
+
 - Gestión de usuarios
 - Reportes y logs
 - Configuración del sistema
 
 ### 5. **Microservicio**
+
 - Parte de una arquitectura más grande
 - API específica para una funcionalidad
 - Integración con otros servicios
@@ -222,6 +240,7 @@ Niveles de log disponibles: error, warn, info, http, verbose, debug, silly
 ## 🌟 Ejemplos de Uso
 
 ### Crear un nuevo producto:
+
 ```bash
 curl -X POST http://localhost:3000/api/products \
   -H "Content-Type: application/json" \
@@ -235,6 +254,7 @@ curl -X POST http://localhost:3000/api/products \
 ```
 
 ### Subir un archivo:
+
 ```bash
 curl -X POST http://localhost:3000/files/upload \
   -H "Authorization: Bearer TU_TOKEN" \
@@ -244,16 +264,19 @@ curl -X POST http://localhost:3000/files/upload \
 ## 🐛 Solución de Problemas
 
 ### El servidor no inicia:
+
 - Verifica que el puerto 3000 no esté ocupado
 - Revisa las variables de entorno en `.env`
 - Comprueba que todas las dependencias estén instaladas
 
 ### Error de autenticación:
+
 - Verifica que el JWT_SECRET esté configurado
 - Comprueba que el token no haya expirado
 - Asegúrate de incluir "Bearer " antes del token
 
 ### Archivos no se suben:
+
 - Verifica los permisos del directorio `uploads/`
 - Comprueba el tamaño del archivo (máximo 5MB por defecto)
 - Revisa que el tipo de archivo esté permitido
@@ -261,6 +284,7 @@ curl -X POST http://localhost:3000/files/upload \
 ## 📞 Soporte
 
 Para reportar problemas o sugerir mejoras, por favor:
+
 1. Revisa la documentación
 2. Comprueba los logs en `logs/`
 3. Verifica la configuración
