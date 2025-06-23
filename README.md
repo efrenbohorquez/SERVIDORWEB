@@ -1,6 +1,13 @@
-# Servidor Web Completo con Node.js y Express
+# 🚀 Servidor Web Completo con Node.js y Express
+
+[![Node.js](https://img.shields.io/badge/Node.js-16%2B-green.svg)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.18-blue.svg)](https://expressjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub repo size](https://img.shields.io/github/repo-size/efrenbohorquez/SERVIDORWEB)](https://github.com/efrenbohorquez/SERVIDORWEB)
 
 Un servidor web moderno y completo desarrollado con Node.js y Express, que incluye autenticación JWT, API REST, gestión de archivos, middleware de seguridad y documentación automática.
+
+📌 **[Ver Demo en Vivo](http://localhost:3001)** | 📚 **[Documentación API](http://localhost:3001/api-docs)**
 
 ## 🚀 Características
 
@@ -45,6 +52,25 @@ Un servidor web moderno y completo desarrollado con Node.js y Express, que inclu
    # Producción
    npm start
    ```
+
+## ⚡ Instalación Rápida
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/efrenbohorquez/SERVIDORWEB.git
+cd SERVIDORWEB
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+
+# Iniciar servidor
+npm start
+```
+
+**¡Listo! 🎉** Tu servidor estará disponible en `http://localhost:3001`
 
 ## 🌐 Endpoints Principales
 
