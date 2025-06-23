@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor Web Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .api-section {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .api-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .endpoint {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .endpoint.get { border-left-color: #27ae60; }
+        .endpoint.post { border-left-color: #3498db; }
+        .endpoint.put { border-left-color: #f39c12; }
+        .endpoint.delete { border-left-color: #e74c3c; }
+        
+        .method {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+        
+        .method.get { background: #27ae60; }
+        .method.post { background: #3498db; }
+        .method.put { background: #f39c12; }
+        .method.delete { background: #e74c3c; }
+        
+        .quick-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn.secondary {
+            background: #95a5a6;
+        }
+        
+        .btn.secondary:hover {
+            background: #7f8c8d;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #34495e;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Servidor Web Completo</h1>
+            <p>API REST moderna con Node.js y Express</p>
+        </div>
+        
+        <div class="content">
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🔐 Autenticación JWT</h3>
+                    <p>Sistema completo de autenticación con tokens JWT, registro de usuarios y middleware de seguridad.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📁 Gestión de Archivos</h3>
+                    <p>Subida, descarga y gestión de archivos con validación de tipos y límites de tamaño.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🛡️ Seguridad Avanzada</h3>
+                    <p>Helmet, CORS, rate limiting y validación de datos para máxima protección.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📊 Logging Completo</h3>
+                    <p>Sistema de logs con Winston para monitoreo y debugging de la aplicación.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📚 Documentación API</h3>
+                    <p>Documentación interactiva generada automáticamente con Swagger/OpenAPI.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ Alto Rendimiento</h3>
+                    <p>Compresión gzip, archivos estáticos optimizados y middleware eficiente.</p>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h2>📋 Endpoints Principales</h2>
+                
+                <div class="endpoint get">
+                    <span class="method get">GET</span>
+                    <code>/api/users</code> - Obtener lista de usuarios
+                </div>
+                
+                <div class="endpoint post">
+                    <span class="method post">POST</span>
+                    <code>/auth/login</code> - Iniciar sesión (email: admin@example.com, password: password)
+                </div>
+                
+                <div class="endpoint post">
+                    <span class="method post">POST</span>
+                    <code>/auth/register</code> - Registrar nuevo usuario
+                </div>
+                
+                <div class="endpoint get">
+                    <span class="method get">GET</span>
+                    <code>/api/products</code> - Obtener productos
+                </div>
+                
+                <div class="endpoint post">
+                    <span class="method post">POST</span>
+                    <code>/files/upload</code> - Subir archivo (requiere autenticación)
+                </div>
+                
+                <div class="endpoint get">
+                    <span class="method get">GET</span>
+                    <code>/files</code> - Listar archivos subidos
+                </div>
+            </div>
+            
+            <div class="quick-links">
+                <a href="/api-docs" class="btn">📖 Documentación API</a>
+                <a href="/api/users" class="btn secondary">👥 Ver Usuarios</a>
+                <a href="/api/products" class="btn secondary">🛍️ Ver Productos</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 Servidor Web Completo - Desarrollado con ❤️ usando Node.js y Express</p>
+        </div>
+    </div>
+    
+    <script>
+        // Agregar funcionalidad para mostrar estado del servidor
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(data => {
+                console.log('✅ Servidor funcionando correctamente');
+                console.log('📊 Usuarios disponibles:', data.count);
+            })
+            .catch(error => {
+                console.error('❌ Error conectando con el servidor:', error);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+# Ejemplos de Uso de la API
+
+## Archivo con ejemplos de requests HTTP para probar la API
+
+### 1. Obtener información del servidor
+GET http://localhost:3001
+Content-Type: application/json
+
+###
+
+### 2. Login con usuario admin
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password"
+}
+
+###
+
+### 3. Registrar nuevo usuario
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+  "name": "Nuevo Usuario",
+  "email": "nuevo@example.com",
+  "password": "mipassword123"
+}
+
+###
+
+### 4. Obtener información del usuario actual (requiere token)
+GET http://localhost:3001/auth/me
+Authorization: Bearer TOKEN_AQUI
+
+###
+
+### 5. Obtener lista de usuarios
+GET http://localhost:3001/api/users
+Content-Type: application/json
+
+###
+
+### 6. Obtener usuario por ID
+GET http://localhost:3001/api/users/1
+Content-Type: application/json
+
+###
+
+### 7. Crear nuevo usuario (requiere autenticación)
+POST http://localhost:3001/api/users
+Authorization: Bearer TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "name": "Usuario Test",
+  "email": "test@example.com",
+  "role": "user"
+}
+
+###
+
+### 8. Obtener productos
+GET http://localhost:3001/api/products
+Content-Type: application/json
+
+###
+
+### 9. Obtener productos con filtros
+GET http://localhost:3001/api/products?category=electronics&limit=2
+Content-Type: application/json
+
+###
+
+### 10. Crear nuevo producto (requiere autenticación)
+POST http://localhost:3001/api/products
+Authorization: Bearer TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "name": "Tablet Nueva",
+  "price": 299.99,
+  "category": "electronics",
+  "stock": 15
+}
+
+###
+
+### 11. Actualizar producto (requiere autenticación)
+PUT http://localhost:3001/api/products/1
+Authorization: Bearer TOKEN_AQUI
+Content-Type: application/json
+
+{
+  "name": "Laptop Actualizada",
+  "price": 1099.99,
+  "category": "electronics",
+  "stock": 8
+}
+
+###
+
+### 12. Eliminar producto (requiere autenticación)
+DELETE http://localhost:3001/api/products/3
+Authorization: Bearer TOKEN_AQUI
+
+###
+
+### 13. Obtener lista de archivos (requiere autenticación)
+GET http://localhost:3001/files
+Authorization: Bearer TOKEN_AQUI
+
+###
+
+### 14. Descargar archivo (público)
+GET http://localhost:3001/files/download/NOMBRE_ARCHIVO_AQUI
+
+###
+
+### 15. Eliminar archivo (requiere autenticación)
+DELETE http://localhost:3001/files/ID_ARCHIVO_AQUI
+Authorization: Bearer TOKEN_AQUI
+
+###

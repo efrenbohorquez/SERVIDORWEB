@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.node-debug2",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "rangav.vscode-thunder-client",
+    "humao.rest-client",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}

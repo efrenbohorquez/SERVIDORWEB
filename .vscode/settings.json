@@ -1,0 +1,12 @@
+{
+  "workbench.colorTheme": "Dark+",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.env": "dotenv"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
